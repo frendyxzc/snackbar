@@ -1,5 +1,6 @@
 package vip.frendy.demosnack
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -14,6 +15,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        btn_list.setOnClickListener {
+            startActivity(Intent(this, ListActivity::class.java))
+        }
 
         button_example_1.setOnClickListener {
             val snackbar = Snackbar.make(relative_layout_main, "Hello from SnackBar 1", Snackbar.LENGTH_LONG)
